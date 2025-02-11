@@ -29,3 +29,20 @@ punchButton.addEventListener('mouseup', () => {
     boyImage.style.transform = 'translateX(0)';
     boyImage.src = 'boy.png';
 });
+
+punchButton.addEventListener('click', () => {
+    boyImage.src = 'boy.gif';
+    setTimeout(() => {
+        boyImage.style.transform = 'translateX(0)';
+        boyImage.src = 'boy.png';
+    }, 300);
+
+    count++;
+    countDisplay.textContent = count;
+    boyImage.style.transform = 'translateX(-10px)';
+    
+    if (count % 5 === 0) {
+        pleaDisplay.textContent = pleas[(count / 5 - 1) % pleas.length];
+    }
+});
+
